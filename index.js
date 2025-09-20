@@ -17,6 +17,5 @@ function generateComuptersChoice() {
 function captureUsersChoice() {
     users_choice = prompt("Choose one: Rock, Paper, or Scissors.", "");
     toString(users_choice);
-    console.log(users_choice);
 }
 
