@@ -1,6 +1,9 @@
 let computers_choice; 
 let users_choice;
 let players_choices;
+let computer_score;
+let user_score;
+let global_score =  `Computer ${computer_score} : ${user_score} User`;
 
 function generateComuptersChoice() {
     let num = Math.floor(Math.random()*10);
@@ -25,3 +28,28 @@ function showChoices() {
     console.log(players_choices);
 }
 
+function playRound(computers_choice, users_choice) {
+    let roundStatus;
+    if(computers_choice == users_choice) {
+        roundStatus = "draw";
+    }
+    else if(computers_choice == "Rock" && users_choice != "Paper") {
+        computer_score++;
+        roundStatus = "computer_won";
+    }
+    else if(computers_choice == "Paper" && users_choice != "Scissors") {
+        computer_score++;
+        roundStatus = "computer_won";
+    }
+    else if(computers_choice = "Scissors" && user_score != "Rock") {
+        computer_score++;
+        roundStatus = "computer_won";
+    }
+    else {
+        user_score++;
+        roundStatus = "user_won";
+    }
+
+    console.log(roundStatus);
+    console.log(global_score);
+}
