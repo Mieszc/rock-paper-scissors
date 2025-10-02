@@ -3,7 +3,7 @@ let users_choice;
 let players_choices;
 let computer_score;
 let user_score;
-let global_score =  `Computer ${computer_score} : ${user_score} User`;
+let global_score = `Computer ${computer_score} : ${user_score} User`;
 
 function generateComuptersChoice() {
     let num = Math.floor(Math.random()*10);
@@ -52,4 +52,11 @@ function playRound(computers_choice, users_choice) {
 
     console.log(roundStatus);
     console.log(global_score);
+}
+
+function playGame() {
+    generateComuptersChoice();
+    captureUsersChoice();
+    showChoices();
+    playRound(computers_choice, users_choice);
 }
