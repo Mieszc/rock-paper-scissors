@@ -1,9 +1,8 @@
 let computers_choice; 
 let users_choice;
 let players_choices;
-let computer_score;
-let user_score;
-let global_score = `Computer ${computer_score} : ${user_score} User`;
+let computer_score = 0;
+let user_score = 0;
 
 function generateComuptersChoice() {
     let num = Math.floor(Math.random()*10);
@@ -51,6 +50,8 @@ function playRound(computers_choice, users_choice) {
         user_score++;
         roundStatus = "user_won";
     }
+
+    let global_score = `Computer ${computer_score} : ${user_score} User`;
 
     console.log(roundStatus);
     console.log(global_score);
