@@ -32,6 +32,8 @@ function playRound(computers_choice, users_choice) {
     let roundStatus;
     if(computers_choice == users_choice) {
         roundStatus = "draw";
+        computer_score + 0;
+        user_score + 0;
     }
     else if(computers_choice == "Rock" && users_choice != "Paper") {
         computer_score++;
@@ -55,8 +57,19 @@ function playRound(computers_choice, users_choice) {
 }
 
 function playGame() {
-    generateComuptersChoice();
-    captureUsersChoice();
-    showChoices();
-    playRound(computers_choice, users_choice);
+    for(i = 0; i < 4; i++) {
+        generateComuptersChoice();
+        captureUsersChoice(); 
+        showChoices();
+        playRound(computers_choice, users_choice);
+    }
+    if(computer_score > user_score){
+        console.log("Computer has won!");
+    }
+    else if(computer_score < user_score) {
+        console.log("User has won!");
+    }
+    else {
+        console.log("It appears to be a draw!");
+    }
 }
